@@ -1,0 +1,18 @@
+.photo-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.photo-grid img{
+    width:140px;
+    height:180px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.photo-grid img:hover{
+    transform:scale(1.05);
+}
