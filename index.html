@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You 💕</title>
+<link rel="stylesheet" href="index.css">
+
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background: #ff9a9e;
+    color:#ffffff;
+    height:100vh;
+    overflow:hidden;
+}
+
+.page{
+    height:100vh;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    transition:0.6s ease;
+}
+
+h1{
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:1.1rem;
+    opacity:0.85;
+    max-width:300px;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:#fff;
+    color:#000;
+    font-size:16px;
+    cursor:pointer;
+}
+
+
+button:hover{
+    background:#ff0055;
+    color:#fff;
+}
+
+.active{
+  display:block;
+}
+
+.hidden{
+    display:none;
+}
+
+#overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:999;
+}
+
+.heart{
+  position:fixed;
+  font-size:30px;
+  animation: fall linear;
+}
+
+@keyframes fall{
+  from{
+    transform:translateY(-10%);
+    opacity:1;
+  }
+  to{
+    transform:translateY(110%);
+    opacity:10;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="overlay"></div>
+
+<!-- PAGE 1 -->
+<div class="page" id="page1">
+    <h1>Heeyyyy Meriii Laaddooo Baachhaa 💕💕</h1>
+    <h2>Kesi Ho Meri Laddooo Baachhaaa</h2>
+    <button onclick="nextPage()">Aadduu babyyy me bohot achi hu😘😘💕💕</button>
+    <button id="no" onmouseover="move()">Achi hu aadu</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page hidden" id="page2">
+    <h1>Aarruu Bachhaa Happy 3 Month Anniversory babbbyyyyy❤️</h1>
+    <p>I love u meri laadoooo bachaa bachaa aap kesi ho bachaa abhi itni dino se hum achse baat 
+        nhi krr pa rhe hai babyyy usske liye bachaa maaf krrna babbyyy bachaa meri laadddooo bachaa love u BACHAAA😘😘💕💕
+        yeh lo ummmmaaahhhhhhh😘😘😘😘😘💕💕💕💕💕 babyyyy bachaa meri bachaaa bachaa plz meri galtiyon ko maaf krrdo 
+        bachaa meri babyyy love u bachaa bachhaa babyyyy meri bachaa in 93 dino me aapne jo mujhe samjha hai me chahta hu 
+        bachaa bas usshi tarah hum apni puri zindagi saath bitayen babyyy love u bachaaa 
+    </p>
+    <h2>Bachaa will you stay with me rest of the life meri arrrr bachhaa😘😘💕💕</h2>
+    <button onclick="nextPage2()">Bohot Sara wala yess hai babbyyyyy❤️ 😘💕💕</button>
+    <button id="no" onmouseover="move()">yess babyyyy</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page hidden" id="page3">
+   <h1>LOVE YOU MERI LAADDOOO BACHAAA😘😘💕💕</h1> 
+   <p>BACHAA WILL YOU BE MY VALENTINE babbyyyyy❤️ <br>💕💕❤️😘😘 
+    </p>
+    <button onclick="nextPage3()">Yesss babbyyyyy❤️</button>
+    <button id="no" onmouseover="move()">No babayyyy😤</button>
+
+    
+</div>
+<!--PAGE 4-->
+<div class="page hidden" id="page4">
+    <h1>Love u bachhaa😘😘💕💕</h1>
+    <button onclick="finish()">Love U Aadduu</button>
+
+    <p id="msg"></p>
+
+    <div class="photo-grid">
+        <img src="Photo1.jpeg" alt="photo">
+        <img src="Photo2.jpeg" alt="photo">
+        <img src="Photo3.jpeg" alt="photo">
+        <img src="Photo4.jpeg" alt="photo">
+        <img src="Photo5.jpeg" alt="photo">
+        <img src="Photo6.jpeg" alt="photo">
+        <img src="Photo7.jpeg" alt="photo">
+        <img src="Photo8.jpeg" alt="photo">
+        <img src="Photo9.jpeg" alt="photo">
+        <img src="Photo10.jpeg" alt="photo">
+        <img src="Photo11.jpeg" alt="photo">
+        <img src="Photo12.jpeg" alt="photo">
+        <img src="Photo13.jpeg" alt="photo">
+        <img src="Photo14.jpeg" alt="photo">
+        <img src="Photo15.jpeg" alt="photo">
+
+    </div>
+</div>
+
+
+<script>
+function show(id){
+ document.querySelectorAll('.box').forEach(b=>b.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+}
+
+function next(n){
+ quickParty();
+ setTimeout(()=>{
+   show("p"+(n+1));
+ },900);
+}
+
+function finish(){
+ document.getElementById("msg").innerHTML =
+ "Love u meri laaddooo bachaaa❤️🥰";
+
+ fullScreenHearts();     // 🔥 MAIN 10 SECOND EFFECT
+}
+
+function move(){
+ let x=Math.random()*300;
+ let y=Math.random()*400;
+
+ let b=document.querySelector(".active #no");
+ b.style.left=x+"px";
+ b.style.top=y+"px";
+}
+
+/* Small effect for normal pages */
+function quickParty(){
+ for(let i=0;i<20;i++){
+   createHeart(5);
+ }
+}
+
+/* ======= MAIN 10 SECOND FULL EFFECT ======= */
+
+function fullScreenHearts(){
+
+ let duration = 10000;   // 10 seconds
+ let end = Date.now() + duration;
+
+ let interval = setInterval(()=>{
+
+   for(let i=0;i<8;i++){
+     createHeart(4);     // bigger + more
+   }
+
+   if(Date.now() > end){
+     clearInterval(interval);
+   }
+
+ },200);
+}
+
+function createHeart(speed){
+
+ let h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="💖";
+
+ h.style.left=Math.random()*100+"%";
+
+ let time = 3 + Math.random()*speed;
+ h.style.animationDuration = time+"s";
+
+ document.getElementById("overlay").appendChild(h);
+
+ setTimeout(()=>h.remove(), time*5000);
+}
+
+
+function nextPage(){
+    document.getElementById("page1").classList.add("hidden");
+    document.getElementById("page2").classList.remove("hidden");
+}
+
+function nextPage2(){
+    document.getElementById("page2").classList.add("hidden");
+    document.getElementById("page3").classList.remove("hidden");
+}
+
+function nextPage3(){
+    document.getElementById("page3").classList.add("hidden");
+    document.getElementById("page4").classList.remove("hidden");
+}
+
+</script>
+
+</body>
+</html>
