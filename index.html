@@ -54,7 +54,11 @@ button{
     font-size:16px;
     cursor:pointer;
 }
-
+    
+#no{
+  position:absolute;
+}
+    
 button:hover{
     background:#ff0055;
     color:#fff;
@@ -71,12 +75,21 @@ button:hover{
 <!-- PAGE 1 -->
 <div class="page" id="page1">
     <h1>Heeyyyy Meriii Laaddooo Baachhaa 💕💕</h1>
-    <p>Something special is coming Bachaa...</p>
+    <p>Happy Rose Day meri Bachaaa </p>
     <button onclick="nextPage()">Aaarruuu bachaaa😘😘💕💕</button>
+    <button id="no" onmoveover="move()">issprr click krro</button> 
+</div>
+
+<div claas="page" id="page2"> 
+    <h1>Hey Aarruu Bachhaa ❤️</h1>
+    <P> Bachaa Jab hame saath me 60 days pure hue the bachaa tab maine yeh bheja tha aapko abhi mere kuch aur gift toh tha nhi bachaaa aapko dene ke liye toh maine socha yehi de deta hu bachaa 
+        ki me agar aa sakta tha bachaa toh vha aakrr aapko ful deta bachaa love u bachaa meri babyyyy 😘😘😘💕💕<p>
+    <button onclick="nextPage()">Aaarruuu bachaaa😘😘💕💕</button>
+    <button id="no" onmoveover="move()">issprr click krro</button> 
 </div>
 
 <!-- PAGE 2 -->
-<div class="page hidden" id="page2">
+<div class="page hidden" id="page3">
     <h1>Hey Aarruu Bachhaa ❤️</h1>
     <p>I love u soo much meri laaddooo bachaaa bachaa aaj saaal ka last day hai bachaa merii aaruu bachaa, bachaa jis tarah hum dono 
         na last 60 dino me jo bhi memories banani hai bachaa me chahta hu bachaa ki in memories ko hum aane wale 60 Year
@@ -87,10 +100,11 @@ button:hover{
 
     </p>
     <button onclick="nextPage2()">love u Bachaaa 😘💕💕</button>
+    <button id="no" onmoveover="move()">issprr click krro</button> 
 </div>
 
 <!-- PAGE 3 -->
-<div class="page hidden" id="page3">
+<div class="page hidden" id="page4">
    <h1>LOVE YOU MERI LAADDOOO BACHAAA😘😘💕💕</h1> 
    <p>TERE HI KHWAB PE KHATAM HOGA YEH SAAL,<br>
      TERE HI KHWAB PRR SHURU HOGA NAYA SAAL...💕💕❤️😘😘 
@@ -112,7 +126,13 @@ function nextPage2(){
     document.getElementById("page2").classList.add("hidden");
     document.getElementById("page3").classList.remove("hidden");
 }
+
+function nextPage2(){
+    document.getElementById("page3").classList.add("hidden");
+    document.getElementById("page4").classList.remove("hidden");
+}
 </script>
 
 </body>
 </html>
+
